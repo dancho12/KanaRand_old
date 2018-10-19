@@ -33,7 +33,7 @@ extern "C"
 JNIEXPORT jstring JNICALL
 Java_com_example_danch_kanarand_MainActivity_Imput2(JNIEnv *env, jobject instance, jstring a_) {
     const char *cstr = env->GetStringUTFChars(a_, NULL);
-    str2[b] = cstr;
+    str2[a] = cstr;
     a++;
     return 0;
 }
@@ -41,9 +41,6 @@ extern "C"
 JNIEXPORT jstring JNICALL
 Java_com_example_danch_kanarand_MainActivity_OutPutRand(JNIEnv *env, jobject instance) {
 
-    int index = 1 + rand() % b;
-    Res = str[index-1];
-    Res2 = str2[index-1];
     return env->NewStringUTF(Res.c_str());
 }
 
@@ -66,5 +63,15 @@ Java_com_example_danch_kanarand_MainActivity_Clean(JNIEnv *env, jobject instance
 
     Res = "";
     b = 0;
+    a=0;
+    return 0;
+}
+
+extern "C"
+JNIEXPORT jstring JNICALL
+Java_com_example_danch_kanarand_MainActivity_Rand(JNIEnv *env, jobject instance) {
+    int index = 1 + rand() % b;
+    Res = str[index-1];
+    Res2 = str2[index-1];
     return 0;
 }

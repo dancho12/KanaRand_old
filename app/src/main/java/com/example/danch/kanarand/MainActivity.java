@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     String item;
     private int selectedTest;
     RadioGroup radio;
+    int ch=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,22 +71,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void readFile2(InputStream fstream) {
-        try{
-            //InputStream fstream = getResources().openRawResource(R.raw.test);
-            BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
-            String strLine;
-            while ((strLine = br.readLine()) != null){
-                System.out.println(strLine);
+  public void show(View v)
+  {
+      selection = (TextView) findViewById(R.id.textView2);
+      switch (ch) {
 
-                Imput(strLine);
-
-            }
-            fstream.close();
-        }catch (IOException e){
-            System.out.println("Ошибка");
-        }
-    }
+          case  0:
+              selection.setText(OutPutLat());
+              ch = 1;
+              Log.d("Переключатель", "ch=" + ch);
+          break;
+          case 1:
+              selection.setText(OutPutRand());
+              ch = 0;
+              Log.d("Переключатель", "ch=" + ch);
+          break;
+      }
+  }
 
     private void readFile(InputStream fstream,int r) {
         try{
@@ -93,29 +95,27 @@ public class MainActivity extends AppCompatActivity {
             //InputStream fstream = getResources().openRawResource(R.raw.test);
             BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
             String strLine;
-            while ((strLine = br.readLine()) != null){
+            while ((strLine = br.readLine()) != null) {
                 System.out.println(strLine);
-                if(r==1) {
+                if (r == 1) {
                     a++;
-                    if(a<6) {
+                    if (a < 6) {
                         Imput(strLine);
                     }
-                    if(a>6){
-                        r=11;
-                    }
+                    Log.d("Что там с счетчиком1", "a=" + a);
                 }
-                if(r==6) {
+                if (r == 6) {
                     a++;
-                    if(a>5&&a<11) {
+                    if (a > 5 && a < 11) {
                         Imput(strLine);
                     }
+                    Log.d("Что там с счетчиком2", "a=" + a);
                 }
-                if(r==11) {
-                    a++;
-                    if (a > 10) {
-                        Imput(strLine);
+                b++;
+                    Log.d("Что там с счетчиком3", "b=" + b);
+                    if (b > 10) {
+                        Imput2(strLine);
                     }
-                }
             }
             fstream.close();
         }catch (IOException e){
@@ -129,25 +129,26 @@ public class MainActivity extends AppCompatActivity {
         Log.d("onClickRadioGroupSelectTest", "selectedTest="+selectedTest);
     }
 
-    public void fu(View v){
-        int r=0;
+    public void fu(View v) {
+        Clean();
+        int r = 0;
         Switch simpleSwitch = (Switch) findViewById(R.id.switch1);
         Boolean switchState = simpleSwitch.isChecked();
 
 
-        switch(selectedTest) {
+        switch (selectedTest) {
             case R.id.radioButton1: {
                 switch (item) {
 
                     case "A":
-                        r=1;
+                        r = 1;
                         InputStream fstream3 = getResources().openRawResource(R.raw.a);
-                        readFile(fstream3,r);
+                        readFile(fstream3, r);
                         break;
                     case "KA":
-                        r=1;
+                        r = 1;
                         InputStream fstream6 = getResources().openRawResource(R.raw.ka);
-                        readFile(fstream6,r);
+                        readFile(fstream6, r);
                         break;
 
 
@@ -156,30 +157,33 @@ public class MainActivity extends AppCompatActivity {
             }
             case R.id.radioButton2: {
 
-                    switch (item) {
+                switch (item) {
 
-                        case "A":
-                            r=6;
-                            InputStream fstream3 = getResources().openRawResource(R.raw.a);
-                            readFile(fstream3,r);
-                            break;
-                        case "KA":
-                            r=6;
-                            InputStream fstream4 = getResources().openRawResource(R.raw.ka);
-                            readFile(fstream4,r);
-                            break;
-                    }
+                    case "A":
+                        r = 6;
+                        InputStream fstream3 = getResources().openRawResource(R.raw.a);
+                        readFile(fstream3, r);
+                        break;
+                    case "KA":
+                        r = 6;
+                        InputStream fstream4 = getResources().openRawResource(R.raw.ka);
+                        readFile(fstream4, r);
+                        break;
+                }
                 break;
             }
         }
+
         selection = (TextView) findViewById(R.id.textView2);
-        if (switchState == (true)){
+       Rand();
+        if (switchState == (true)) {
             selection.setText(OutPutLat());
-        }
-        else {
+            ch=1;
+        } else {
             selection.setText(OutPutRand());
+            ch=0;
         }
-        Clean();
+
     }
 
 
@@ -191,6 +195,7 @@ public class MainActivity extends AppCompatActivity {
     public native String stringFromJNI();
     public native String Imput(String a);
     public native String Imput2(String a);
+    public native String Rand();
     public native String OutPutLat();
     public native String Clean();
     public native String OutPutRand();

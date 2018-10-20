@@ -81,6 +81,8 @@ Java_com_example_danch_kanarand_MainActivity_Rand(JNIEnv *env, jobject instance)
     if(index==index2)
     {
             index = 1 + rand() % b;
+
+
     }
     index2 =index;
     Res = str[index-1];

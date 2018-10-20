@@ -1,10 +1,10 @@
 Executable : C:\Users\danch\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\cmake.exe
 arguments : 
--HC:\Projects\KanaRand\app
--BC:\Projects\KanaRand\app\.externalNativeBuild\cmake\release\arm64-v8a
+-HG:\GitProjects\KanaRand\app
+-BG:\GitProjects\KanaRand\app\.externalNativeBuild\cmake\release\arm64-v8a
 -DANDROID_ABI=arm64-v8a
 -DANDROID_PLATFORM=android-24
--DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\Projects\KanaRand\app\build\intermediates\cmake\release\obj\arm64-v8a
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=G:\GitProjects\KanaRand\app\build\intermediates\cmake\release\obj\arm64-v8a
 -DCMAKE_BUILD_TYPE=Release
 -DANDROID_NDK=C:\Users\danch\AppData\Local\Android\Sdk\ndk-bundle
 -DCMAKE_CXX_FLAGS=

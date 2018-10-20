@@ -8,8 +8,8 @@
 く
 け
 こ
-KA(КА)
-KI(КИ)
-KU(КУ)
-KE(КЭ)
-KO(КО)
+KA
+KI
+KU
+KE
+KO

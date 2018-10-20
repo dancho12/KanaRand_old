@@ -9,7 +9,7 @@ std::string Res2 = "";
 int a=0,b=0;
 std::string str[100];
 std::string str2[100];
-
+int index2=10;
 extern "C" JNIEXPORT jstring
 
 JNICALL
@@ -60,7 +60,6 @@ Java_com_example_danch_kanarand_MainActivity_Clean(JNIEnv *env, jobject instance
         str[i] = "";
         str2[i] = "";
     }
-
     Res = "";
     b = 0;
     a=0;
@@ -70,7 +69,14 @@ Java_com_example_danch_kanarand_MainActivity_Clean(JNIEnv *env, jobject instance
 extern "C"
 JNIEXPORT jstring JNICALL
 Java_com_example_danch_kanarand_MainActivity_Rand(JNIEnv *env, jobject instance) {
-    int index = 1 + rand() % b;
+    int index;
+    index = 1 + rand() % b;
+    if(index==index2)
+    {
+            index = 1 + rand() % b;
+
+    }
+    index2 =index;
     Res = str[index-1];
     Res2 = str2[index-1];
     return 0;

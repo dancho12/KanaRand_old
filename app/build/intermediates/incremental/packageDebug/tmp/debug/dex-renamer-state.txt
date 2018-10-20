@@ -1,4 +1,7 @@
-#Sat Oct 20 16:32:14 MSK 2018
-base.0=G\:\\GitProjects\\KanaRand\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\37
+#Sat Oct 20 22:41:01 MSK 2018
+base.0=G\:\\GitProjects\\KanaRand\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
+path.1=classes.dex
+renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
+base.1=G\:\\GitProjects\\KanaRand\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0

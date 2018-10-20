@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         System.loadLibrary("native-lib");
     }
 
+    String Res = "";
+    String Res2 = "";
 
     String[] cities = {"A", "KA", "SA", "TA", "NA", "HA","MA","YA","RA","WA","WO"};
     TextView selection;
@@ -77,12 +79,14 @@ public class MainActivity extends AppCompatActivity {
       switch (ch) {
 
           case  0:
-              selection.setText(OutPutLat());
+              //selection.setText(OutPutLat());
+              selection.setText(Res2);
               ch = 1;
               Log.d("Переключатель", "ch=" + ch);
           break;
           case 1:
-              selection.setText(OutPutRand());
+              //selection.setText(OutPutRand());
+              selection.setText(Res);
               ch = 0;
               Log.d("Переключатель", "ch=" + ch);
           break;
@@ -175,10 +179,12 @@ public class MainActivity extends AppCompatActivity {
         selection = (TextView) findViewById(R.id.textView2);
         Rand();
         if (switchState == (true)) {
-            selection.setText(OutPutLat());
+            //selection.setText(OutPutLat());
+            selection.setText(Res2);
             ch=1;
         } else {
-            selection.setText(OutPutRand());
+            //selection.setText(OutPutRand());
+            selection.setText(Res);
             ch=0;
         }
     }
@@ -323,10 +329,12 @@ public class MainActivity extends AppCompatActivity {
         selection = (TextView) findViewById(R.id.textView2);
        Rand();
         if (switchState == (true)) {
-            selection.setText(OutPutLat());
+            //selection.setText(OutPutLat());
+            selection.setText(Res2);
             ch=1;
         } else {
-            selection.setText(OutPutRand());
+            //selection.setText(OutPutRand());
+            selection.setText(Res);
             ch=0;
         }
 
@@ -338,11 +346,59 @@ public class MainActivity extends AppCompatActivity {
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.
      */
-    public native String stringFromJNI();
-    public native String Imput(String a);
-    public native String Imput2(String a);
-    public native String Rand();
-    public native String OutPutLat();
-    public native String Clean();
-    public native String OutPutRand();
+//    public native String stringFromJNI();
+//    public native String Imput(String a);
+//    public native String Imput2(String a);
+//    public native String Rand();
+//    public native String OutPutLat();
+//    public native String Clean();
+//    public native String OutPutRand();
+
+
+
+    String st = "STOP";
+    int a=0,b=0;
+    String[] str =new String[200];
+    String[] str2 = new String[200];
+    int index2=10;
+
+
+    void Imput(String cstr) {
+        if(!cstr.equals(st)) {
+            str[b] = cstr;
+            b++;
+        }
+    }
+
+    void Imput2(String cstr) {
+        if(!cstr.equals(st))
+        {
+            str2[a] = cstr;
+            a++;
+        }
+    }
+
+    void Clean() {
+
+
+        for (int i = 0; i < b; i++) {
+            str[i] = "";
+            str2[i] = "";
+        }
+        Res = "";
+        b = 0;
+        a=0;
+    }
+
+    void Rand() {
+
+        int index = (int) ( Math.random() * b+1);
+        if(index==index2)
+        {
+            index = (int) ( Math.random() * b+1);
+        }
+        index2 =index;
+        Res = str[index-1];
+        Res2 = str2[index-1];
+    }
 }

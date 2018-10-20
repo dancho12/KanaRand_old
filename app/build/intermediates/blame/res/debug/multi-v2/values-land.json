@@ -1,10 +1,29 @@
 {
     "logs": [
         {
-            "outputFile": "G:\\GitProjects\\KanaRand\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+            "outputFile": "G:\\GitProjects\\KanaRand_old\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\danch\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\b951149ae2c77fd3970b99267fb74b71\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\danch\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\9c9d17f7ead5880024d50a24e230548c\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "10",
+                        "endOffsets": "222"
+                    },
+                    "to": {
+                        "startLines": "5",
+                        "startColumns": "4",
+                        "startOffsets": "264",
+                        "endLines": "8",
+                        "endColumns": "10",
+                        "endOffsets": "431"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\danch\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\efe5854ae955f48ec4a7e571da477a81\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",

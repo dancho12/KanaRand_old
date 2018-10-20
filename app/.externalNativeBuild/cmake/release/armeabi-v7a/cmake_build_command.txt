@@ -1,10 +1,10 @@
 Executable : C:\Users\danch\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\cmake.exe
 arguments : 
--HG:\GitProjects\KanaRand\app
--BG:\GitProjects\KanaRand\app\.externalNativeBuild\cmake\release\armeabi-v7a
+-HG:\GitProjects\KanaRand_old\app
+-BG:\GitProjects\KanaRand_old\app\.externalNativeBuild\cmake\release\armeabi-v7a
 -DANDROID_ABI=armeabi-v7a
 -DANDROID_PLATFORM=android-24
--DCMAKE_LIBRARY_OUTPUT_DIRECTORY=G:\GitProjects\KanaRand\app\build\intermediates\cmake\release\obj\armeabi-v7a
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=G:\GitProjects\KanaRand_old\app\build\intermediates\cmake\release\obj\armeabi-v7a
 -DCMAKE_BUILD_TYPE=Release
 -DANDROID_NDK=C:\Users\danch\AppData\Local\Android\Sdk\ndk-bundle
 -DCMAKE_CXX_FLAGS=

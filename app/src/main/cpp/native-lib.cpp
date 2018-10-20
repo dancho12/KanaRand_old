@@ -6,9 +6,10 @@
 
 std::string Res = "";
 std::string Res2 = "";
+std::string st = "STOP";
 int a=0,b=0;
-std::string str[100];
-std::string str2[100];
+std::string str[200];
+std::string str2[200];
 int index2=10;
 extern "C" JNIEXPORT jstring
 
@@ -24,8 +25,10 @@ extern "C"
 JNIEXPORT jstring JNICALL
 Java_com_example_danch_kanarand_MainActivity_Imput(JNIEnv *env, jobject instance, jstring a_) {
     const char *cstr = env->GetStringUTFChars(a_, NULL);
-    str[b] = cstr;
-    b++;
+    if(cstr!=st) {
+        str[b] = cstr;
+        b++;
+    }
     return 0;
 }
 
@@ -33,8 +36,12 @@ extern "C"
 JNIEXPORT jstring JNICALL
 Java_com_example_danch_kanarand_MainActivity_Imput2(JNIEnv *env, jobject instance, jstring a_) {
     const char *cstr = env->GetStringUTFChars(a_, NULL);
-    str2[a] = cstr;
-    a++;
+    if(cstr!=st)
+    {
+        str2[a] = cstr;
+        a++;
+    }
+
     return 0;
 }
 extern "C"
@@ -74,7 +81,6 @@ Java_com_example_danch_kanarand_MainActivity_Rand(JNIEnv *env, jobject instance)
     if(index==index2)
     {
             index = 1 + rand() % b;
-
     }
     index2 =index;
     Res = str[index-1];
